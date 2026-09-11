@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pi Tutor CLI
+Comment=Launch Pi CLI with Ollama Tutor model
+Exec=gnome-terminal -- bash -c 'pi --model ollama/qwen3-coder:30b --no-tools; exec bash'
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;Education;
+StartupNotify=true

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Sort Dropped Files Here
+Comment=Drag and drop files onto this icon to sort them
+Exec=/home/yubuntu/bin/drop-sorter.sh %F
+Type=Application
+Terminal=true
+MimeType=application/pdf;image/png;image/jpeg;text/plain;
+Icon=system-run

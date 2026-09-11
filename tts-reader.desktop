@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Local TTS Reader
+Comment=Read dropped text files or clipboard via decoupled dispatcher
+Exec=/home/yubuntu/.local/bin/tts-dispatch %f
+Icon=audio-speakers
+Terminal=false
+Categories=Utility;
+MimeType=text/plain;text/markdown;
+StartupNotify=false

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DeepSeek Harness
+Comment=Launch Local DeepSeek Harness Web UI
+Exec=/home/yubuntu/.local/bin/launch-dsh.sh
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;IDE;
+StartupNotify=true
+

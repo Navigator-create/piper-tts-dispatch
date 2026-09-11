@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Name=Pi Control Plane
+Comment=Launch Pi AI Coding Agent
+Exec=bash -ic 'cd ~/my-daytona-project && docker run --rm -it -e DAYTONA_API_KEY="$DAYTONA_API_KEY" -v "$PWD":/workspace -w /workspace pi-control-plane'
+Icon=utilities-terminal
+Terminal=true
+Type=Application

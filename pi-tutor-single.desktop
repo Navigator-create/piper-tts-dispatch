@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Pi Tutor (Quick Query)
+Comment=Prompt for a math problem and output clean Unicode math
+Exec=gnome-terminal -- bash -c 'QUERY=$(zenity --entry --title="Pi Math Tutor" --text="Enter your math question:"); if [ -n "$QUERY" ]; then pi --model ollama/qwen3-coder:30b --no-tools "$QUERY" | python3 ~/gent/math_cleaner.py; echo ""; read -p "Press Enter to close..." ; fi'
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;Education;
+StartupNotify=true

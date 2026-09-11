@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=YouTube Transcriber
+Comment=Download and transcribe YouTube videos with timestamps
+Exec=/home/yubuntu/gent/run_transcript.sh
+Icon=utilities-terminal
+Terminal=false
+Categories=Utility;

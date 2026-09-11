@@ -1,0 +1,100 @@
+rules:
+  # --- Move standalone Python scripts to ~/dev/python ---
+  - name: Move Python scripts from home to dev/python
+    tags: [move, python]
+    folders:
+      - ~
+    filters:
+      - name:
+          - chat_with_tutor.py
+          - init_db.py
+          - demo_capability.py
+          - chromebook.py
+          - database.py       # if you have it
+          - translator.py     # if you have it
+      - is_file: true
+    actions:
+      - move: ~/dev/python
+
+  # --- Move project folders to ~/dev/projects ---
+  - name: Move project directories to dev/projects
+    tags: [move, projects]
+    folders:
+      - ~
+    filters:
+      - name:
+          - terminal_recovery_tool
+          - latex_to_sympy
+          - PedagogicalRL
+          - hermes-backup
+      - is_dir: true
+    actions:
+      - move: ~/dev/projects
+
+  # --- Move shell scripts to ~/scripts ---
+  - name: Move shell scripts to scripts
+    tags: [move, scripts]
+    folders:
+      - ~
+    filters:
+      - name: backup_hermes.sh
+      - is_file: true
+    actions:
+      - move: ~/scripts
+
+  # --- Move HTML files to ~/dev/web ---
+  - name: Move HTML to dev/web
+    tags: [move, web]
+    folders:
+      - ~
+    filters:
+      - name: bios_page.html
+      - is_file: true
+    actions:
+      - move: ~/dev/web
+
+  # --- Move data files (DB / JSON) to ~/data ---
+  - name: Move data files to data
+    tags: [move, data]
+    folders:
+      - ~
+    filters:
+      - name:
+          - orchestrator.db
+          - demo_output.json
+      - is_file: true
+    actions:
+      - move: ~/data
+
+  # --- Move the Miniconda installer (match the pattern) ---
+  - name: Move Conda installer to installers
+    tags: [move, installers]
+    folders:
+      - ~
+    filters:
+      - pattern: 'Miniconda3.*\.sh'
+      - is_file: true
+    actions:
+      - move: ~/installers
+
+  # --- Delete __pycache__ folders (safe) ---
+  - name: Remove __pycache__
+    tags: [cleanup]
+    folders:
+      - ~
+    filters:
+      - name: __pycache__
+      - is_dir: true
+    actions:
+      - delete: true
+
+  # --- (Optional) Move PDFs from home to ~/Documents/PDFs (if any exist) ---
+  - name: Move PDFs from home to Documents/PDFs
+    tags: [move, pdf]
+    folders:
+      - ~
+    filters:
+      - extension: pdf
+      - is_file: true
+    actions:
+      - move: ~/Documents/PDFs

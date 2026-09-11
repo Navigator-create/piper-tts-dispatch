@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Foxit Reader (Sandbox)
+Comment=View PDF documents safely in Docker sandbox
+Exec=/home/yubuntu/PDF_Sandbox/run_foxit.sh
+Icon=/opt/foxitreader/images/FoxitReader.png
+Terminal=false
+Type=Application
+MimeType=application/pdf;
+Categories=Viewer;Office;
