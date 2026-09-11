@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+PROMPT_LEVEL="${1:---simple}"
+CLIPBOARD_TEXT="$(xclip -o -selection clipboard 2>/dev/null || xsel -o -b 2>/dev/null || true)"
+
+if [[ -z "$CLIPBOARD_TEXT" ]]; then
+    notify-send "AI Explanation Error" "Clipboard is empty."
+    exit 1
+fi
+
+case "$PROMPT_LEVEL" in
+    --simple)
+        PROMPT="Explain this in simple terms for a middle school student in 3 short sentences:"
+        ;;
+    --standard)
+        PROMPT="Explain this clearly for a high school student in 3 short sentences:"
+        ;;
+    --bullets)
+        PROMPT="Summarize the key points of this text in 3 concise bullet points:"
+        ;;
+esac
+
+# Stop any currently playing audio
+/home/yubuntu/.local/bin/tts-dispatch --stop
+
+# Generate response via Ollama and stream output directly into Piper TTS
+EXPLANATION=$(ollama run qwen2.5:3b "$PROMPT $CLIPBOARD_TEXT")
+/home/yubuntu/.local/bin/tts-dispatch "$EXPLANATION"
